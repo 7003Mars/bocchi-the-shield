@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+    id "io.github.liplum.mgpp" version "1.2.0"
+}
+
+group 'org.example'
+version '1.0'
+sourceSets {
+    main {
+        java.srcDirs = ["src"]
+    }
+}
+java {
+    targetCompatibility = 8
+    sourceCompatibility = 8
+}
+repositories {
+    mavenCentral()
+    mindustryRepo()
+}
+dependencies {
+    importMindustry()
+}
+mindustry {
+    dependency {
+        mindustryMirror version: 'v141.2'
+        arc version: 'v141.3'
+    }
+    client {
+        official version: 'v141.3'
+    }
+    server {
+        official version: 'v141.3'
+    }
+    def name = project.archivesBaseName
+    deploy {
+        baseName = name
+    }
+}
+mindustryAssets {
+    rootAt "$projectDir/assets"
+}

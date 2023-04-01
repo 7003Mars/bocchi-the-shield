@@ -1,0 +1,12 @@
+displayName: "%Repository%"
+name: "%Repository%"
+author: "%Owner%"
+main: "%MainClassQualifiedName%"
+repo: "%Owner%/%Repository%"
+subtitle: ""
+description: ""
+version: "1.0"
+minGameVersion: "141"
+java: true
+hidden: false
+dependencies: []

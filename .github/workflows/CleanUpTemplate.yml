@@ -1,0 +1,40 @@
+name: Template Cleanup
+on:
+  push:
+    branches:
+      - master
+jobs:
+  template-cleanup:
+    name: Template Cleanup
+    runs-on: ubuntu-latest
+    if: github.event.repository.full_name != 'liplum/MindustryModTemplate'
+    steps:
+      - name: Fetch Sources
+        uses: actions/checkout@v2.4.0
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Run Cleanup Script
+        env:
+          FULL_NAME: ${{ github.event.repository.full_name }}
+        run: |
+          if [ -f cleanup.py ]; then
+            python cleanup.py "$FULL_NAME"
+          else
+            rm .github/workflows/CleanUpTemplate.yml
+          fi
+
+        # Commit modified files
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Template cleanup"
+        # Push changes
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          branch: master
+          github_token: ${{ secrets.GITHUB_TOKEN }}
