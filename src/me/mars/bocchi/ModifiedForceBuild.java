@@ -9,7 +9,6 @@ import arc.graphics.g2d.Lines;
 import arc.graphics.g2d.TextureRegion;
 import arc.graphics.gl.FrameBuffer;
 import arc.math.Mathf;
-import arc.util.Log;
 import arc.util.Tmp;
 import mindustry.graphics.Layer;
 import mindustry.world.blocks.defense.ForceProjector;
