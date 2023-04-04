@@ -1,12 +1,12 @@
-displayName: "%Repository%"
-name: "%Repository%"
-author: "%Owner%"
-main: "%MainClassQualifiedName%"
-repo: "%Owner%/%Repository%"
-subtitle: ""
-description: ""
+displayName: "Bocchi shield"
+name: "bocchi"
+author: "mars"
+main: "me.mars.bocchi.Bocchi"
+repo: "mars/bocchi"
+subtitle: "Minor april fools joke"
+description: "Gotoh-san turned into a force projector!!"
 version: "1.0"
 minGameVersion: "141"
 java: true
-hidden: false
+hidden: true
 dependencies: []

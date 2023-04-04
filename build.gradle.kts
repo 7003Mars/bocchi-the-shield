@@ -13,7 +13,7 @@ sourceSets {
         java.srcDir("test")
     }
 }
-group= "org.example"
+group= "me.mars"
 version= "1.0"
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
@@ -27,18 +27,26 @@ dependencies {
     importMindustry()
 }
 mindustry {
+
     dependency {
-        mindustry mirror "v141.2"
+        mindustry on "v141.3"
         arc on "v141.3"
     }
-    client {
-        mindustry official "v141.3"
+    client{
+        mindustry from GameLocation("mindustry-antigrief", "mindustry-client-v7-builds",
+            "1381", "desktop.jar")
+//        mindustry official "v141.3"
     }
-    server {
-        mindustry official "v141.3"
-    }
+//    server {
+//        mindustry official "v141.3"
+//    }
     deploy {
         baseName = project.name
+    }
+
+    run {
+        keepOtherMods
+        useDefaultDataDir
     }
 }
 mindustryAssets {
