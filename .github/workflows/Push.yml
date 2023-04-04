@@ -26,3 +26,9 @@ jobs:
         with:
           name: Unzip-me
           path: build/tmp/deploy/*.jar
+
+      - name: Upload as release
+        if: ${{startsWith(github.ref, 'refs/tags/')}}
+        uses: svenstaro/upload-release-action@v2
+        with:
+          file: build/tmp/deploy/*.jar
