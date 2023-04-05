@@ -40,17 +40,22 @@ public class ModifiedForceBuild extends ForceProjector.ForceBuild {
 			this.frameBuffer.begin(Color.clear);
 			Gl.clear(Gl.stencilBufferBit);
 			Draw.proj(-fbw/2f, -fbh/2f, fbw, fbh);
+			float drawRad = Math.max(boosted, radius);
 			Draw.stencil(() -> Fill.poly(0f, 0f, 6, boosted), () -> {
-				float drawRad = Math.max(boosted, radius);
 				Draw.color(Color.white);
 				Draw.rect(bocchiRegion, 0f, 0f, drawRad*2f, drawRad*2f);
 				Lines.rect(-drawRad, -drawRad, drawRad*2f, drawRad*2f);
 			});
+			Lines.stroke(1f);
 			this.frameBuffer.end();
 			Draw.proj(Tmp.m1);
 			Draw.reset();
 			TextureRegion bufferTex = Draw.wrap(this.frameBuffer.getTexture());
+			Draw.color();
 			Draw.rect(bufferTex, this.x, this.y, bufferTex.width, bufferTex.height);
+			Draw.color(this.team.color);
+			Lines.poly(this.x, this.y, 6, boosted);
+			Lines.stroke(1f);
 		});
 		// Image draw
 
