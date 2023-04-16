@@ -10,6 +10,7 @@ import arc.graphics.g2d.TextureRegion;
 import arc.graphics.gl.FrameBuffer;
 import arc.math.Mathf;
 import arc.util.Tmp;
+import mindustry.Vars;
 import mindustry.graphics.Layer;
 import mindustry.world.blocks.defense.ForceProjector;
 
@@ -27,6 +28,10 @@ public class ModifiedForceBuild extends ForceProjector.ForceBuild {
 	@Override
 	public void drawShield() {
 		if (broken) return;
+		if (!Vars.renderer.animateShields) {
+			super.drawShield();
+			return;
+		}
 		float boosted = this.realRadius();
 		float radius = this.proj().radius;
 		Draw.draw(Layer.shields, () -> {
