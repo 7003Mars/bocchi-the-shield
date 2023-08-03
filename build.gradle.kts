@@ -29,8 +29,8 @@ dependencies {
 mindustry {
 
     dependency {
-        mindustry on "v145.1"
-        arc on "v145"
+        mindustry on "0e31103"
+        arc on "v145.1"
     }
     client{
         mindustry from GameLocation("mindustry-antigrief", "mindustry-client-v7-builds",
