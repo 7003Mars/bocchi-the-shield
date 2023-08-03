@@ -14,7 +14,7 @@ import mindustry.Vars;
 import mindustry.graphics.Layer;
 import mindustry.world.blocks.defense.ForceProjector;
 
-import static me.mars.bocchi.BocchiKt.bocchiRegion;
+import static me.mars.bocchi.Bocchi.bocchiRegion;
 
 public class ModifiedForceBuild extends ForceProjector.ForceBuild {
 	private FrameBuffer frameBuffer;

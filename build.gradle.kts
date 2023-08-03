@@ -1,7 +1,7 @@
 import io.github.liplum.mindustry.*
 
 plugins {
-    kotlin("jvm") version "1.8.0"
+    kotlin("jvm") version "1.9.0"
     id("io.github.liplum.mgpp") version "1.2.0"
 }
 
@@ -29,8 +29,8 @@ dependencies {
 mindustry {
 
     dependency {
-        mindustry on "v141.3"
-        arc on "v141.3"
+        mindustry on "v145.1"
+        arc on "v145.1"
     }
     client{
         mindustry from GameLocation("mindustry-antigrief", "mindustry-client-v7-builds",
