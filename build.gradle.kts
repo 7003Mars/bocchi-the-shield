@@ -29,7 +29,7 @@ dependencies {
 mindustry {
 
     dependency {
-        mindustry on "0e31103"
+        mindustry on "v145.1"
         arc on "v145.1"
     }
     client{
@@ -51,4 +51,12 @@ mindustry {
 }
 mindustryAssets {
     root at "$projectDir/assets"
+}
+
+configurations.all{
+    resolutionStrategy.eachDependency {
+        if(this.requested.group == "com.github.Anuken.Arc"){
+            this.useVersion("v145.1")
+        }
+    }
 }
