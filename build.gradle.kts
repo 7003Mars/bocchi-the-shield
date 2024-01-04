@@ -29,8 +29,8 @@ dependencies {
 mindustry {
 
     dependency {
-        mindustry on "v145.1"
-        arc on "v145.1"
+        mindustry on "v146"
+        arc on "v146"
     }
     client{
         mindustry from GameLocation("mindustry-antigrief", "mindustry-client-v7-builds",
@@ -56,7 +56,7 @@ mindustryAssets {
 configurations.all{
     resolutionStrategy.eachDependency {
         if(this.requested.group == "com.github.Anuken.Arc"){
-            this.useVersion("v145.1")
+            this.useVersion("v146")
         }
     }
 }
