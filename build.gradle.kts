@@ -16,11 +16,15 @@ sourceSets {
 group= "me.mars"
 version= "1.0"
 java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
 repositories {
     mavenCentral()
+    maven {
+        name = "xpdustryRepositoryMindustry"
+        url = uri("https://maven.xpdustry.com/mindustry")
+    }
     mindustryRepo()
 }
 dependencies {
@@ -29,8 +33,8 @@ dependencies {
 mindustry {
 
     dependency {
-        mindustry on "v145.1"
-        arc on "v145.1"
+        mindustry on "v159"
+        arc on "v159"
     }
     client{
         mindustry from GameLocation("mindustry-antigrief", "mindustry-client-v7-builds",
@@ -56,7 +60,7 @@ mindustryAssets {
 configurations.all{
     resolutionStrategy.eachDependency {
         if(this.requested.group == "com.github.Anuken.Arc"){
-            this.useVersion("v145.1")
+            this.useVersion("v159")
         }
     }
 }
